@@ -7,8 +7,8 @@ let turn = document.getElementById("turn-info");
 let btn = document.getElementById("submit");
 btn.addEventListener("click", function(e) {
     e.preventDefault();
-   let player1 = document.getElementById("player-1").value;
-   let player2 = document.getElementById("player-2").value;
+   let player1 = document.getElementById("player1").value;
+   let player2 = document.getElementById("player2").value;
     if (player1 === "" || player2 === "") {
         alert("Please enter names for both players.");
         return;
@@ -45,7 +45,7 @@ cells.forEach(function(cell) {
             moves++;
             if (checkWinner()) return;
             turnO = false;
-            turn.innerText = document.getElementById("player-2").value + ", you're up";
+            turn.innerText = document.getElementById("player2").value + ", you're up";
             
         }
         else if (!turnO && cell.innerText === "") {
@@ -53,7 +53,7 @@ cells.forEach(function(cell) {
             moves++;
             if (checkWinner()) return;
             turnO = true;
-            turn.innerText = document.getElementById("player-1").value + ", you're up";
+            turn.innerText = document.getElementById("player1").value + ", you're up";
             
         }
        }
@@ -70,8 +70,8 @@ cells.forEach(function(cell) {
 
         if (a !== "" && a === b && b === c) {
             let winnerName = a === "O"
-                ? document.getElementById("player-1").value
-                : document.getElementById("player-2").value;
+                ? document.getElementById("player1").value
+                : document.getElementById("player2").value;
 
             let showmsg = document.getElementById("winner-info");
             showmsg.style.display = "block";
