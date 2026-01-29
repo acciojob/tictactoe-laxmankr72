@@ -31,7 +31,7 @@ let winnerAttempt = [
 ];
 
 let cells = document.querySelectorAll("#game-space div");
-let turnO = true;
+let turnx = true;
 let moves = 0;
 cells.forEach(function(cell) {
     cell.addEventListener("click", function() {
@@ -40,19 +40,19 @@ cells.forEach(function(cell) {
     showmsg.style.display = "block";
     showmsg.innerText = "🤝 Game Draw!";
 }else{
-        if (turnO && cell.innerText === "") {
-            cell.innerText = "o";
-            moves++;
-            if (checkWinner()) return;
-            turnO = false;
-            turn.innerText = document.getElementById("player2").value + ", you're up";
-            
-        }
-        else if (!turnO && cell.innerText === "") {
+        if (turnx && cell.innerText === "") {
             cell.innerText = "x";
             moves++;
             if (checkWinner()) return;
-            turnO = true;
+            turnx = false;
+            turn.innerText = document.getElementById("player2").value + ", you're up";
+            
+        }
+        else if (!turnx && cell.innerText === "") {
+            cell.innerText = "o";
+            moves++;
+            if (checkWinner()) return;
+            turnx = true;
             turn.innerText = document.getElementById("player1").value + ", you're up";
             
         }
@@ -69,7 +69,7 @@ cells.forEach(function(cell) {
         let c = cells[combo[2]].innerText;
 
         if (a !== "" && a === b && b === c) {
-            let winnerName = a === "o"
+            let winnerName = a === "x"
                 ? document.getElementById("player1").value
                 : document.getElementById("player2").value;
 
