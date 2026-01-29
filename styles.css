@@ -1,1 +1,65 @@
 /*  your css code here. If applicable */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+/* #player-form{
+    display: none;
+} */
+
+#player-form label,input,button{
+    font-size: 20px;
+}
+#player-form input{
+    padding: 5px;
+    margin-left: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+#player-form button{
+    padding: 8px 15px;
+    width: 250px;
+    border-radius: 10px;
+}
+
+#game-space{
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 5px;
+    /* display: none; */
+}
+#game-space div{
+    width: 100px;
+    height: 100px;
+    background-color: #a552ed;
+    border: 2px solid #000000;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+#turn-info{
+    display: none;
+}
+#winner-info{
+    display: none;
+}
