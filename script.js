@@ -41,7 +41,7 @@ cells.forEach(function(cell) {
     showmsg.innerText = "🤝 Game Draw!";
 }else{
         if (turnO && cell.innerText === "") {
-            cell.innerText = "O";
+            cell.innerText = "o";
             moves++;
             if (checkWinner()) return;
             turnO = false;
@@ -49,7 +49,7 @@ cells.forEach(function(cell) {
             
         }
         else if (!turnO && cell.innerText === "") {
-            cell.innerText = "X";
+            cell.innerText = "x";
             moves++;
             if (checkWinner()) return;
             turnO = true;
@@ -69,7 +69,7 @@ cells.forEach(function(cell) {
         let c = cells[combo[2]].innerText;
 
         if (a !== "" && a === b && b === c) {
-            let winnerName = a === "O"
+            let winnerName = a === "o"
                 ? document.getElementById("player1").value
                 : document.getElementById("player2").value;
 
